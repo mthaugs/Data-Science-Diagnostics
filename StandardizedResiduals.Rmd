@@ -1,0 +1,44 @@
+---
+title: "Standardized Residuals"
+output: pdf_document
+fontsize: 12pt
+geometry: margin=1in
+---
+## Definition
+**Standardized residuals** are the fitted model residuals divided by the residual standard deviation where the residual standard deviation is the square root of the Mean Square Error of the model. 
+
+**Equations**
+$$s_i = \frac{e_i}{\sqrt{MSE}} = \frac{e_i}{\hat{Var}(e_i)}$$
+$$MSE = \frac{\sum(Y_i-\hat{Y_i})^2}{n-p}$$
+
+## Example Plot
+```{r echo=FALSE, fig.height=3.5, fig.width=6.5}
+data(mtcars)
+model <- lm(mpg ~ ., data=mtcars)
+stdResiduals <- rstandard(model)
+plot(stdResiduals, ylab="Standardized Residuals", main="Standardized Residuals for mtcars Model\n mpg ~ .")
+abline(0,0)
+abline(h=2, lty = 3)
+abline(h=-2, lty = 3)
+```
+
+## Interpretation and Use
+Standardized residuals allow for comparing on the standard scale ($\sigma^2=\sigma=1$) where values exceeding +-2 on the scale may indicate an unusual occurence for further investigation. 
+
+**Problems**
+Since standardized residuals derive from $e_i = y_i -\hat{y}_i$, a $y_i$ with high leverage will drag the regression towards it, influencing the residual estimate of $y_i$
+
+**Solutions and Further Avenues**  
+*Studentized Residuals -* fit the regression with $y_i$ excluded such that the residual becomes $y_i - \hat{y}_{i,(-i)}$ where $\hat{y}_{i,(-i)}$ denotes the regression line fit minus the point, $y_i$.
+
+## R Code
+```{r}
+data(mtcars)
+model <- lm(mpg ~ ., data=mtcars)
+stdResiduals <- rstandard(model)
+#plot(stdResiduals, ylab="Standardized Residuals", 
+#        main="Standardized Residuals for mtcars Model\n mpg ~ .")
+#abline(0,0)
+#abline(h=2, lty = 3)
+#abline(h=-2, lty = 3)
+```
