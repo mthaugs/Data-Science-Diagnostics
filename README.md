@@ -2,7 +2,7 @@
 
 This repo is designed to compile a short list of typical diagnostics used when building regression and prediction models. The list is not exhaustive nor should every diagnostic be used.  
 
-Each diagnostic file is a short synopsis of each type of diagnostic to include:
+Each diagnostic file is a short synopsis of each type of diagnostic to include:  
 1. A brief definition  
 2. The relevant equations that lead to the diagnostic  
 3. A plot (if applicable) of a diagnostic sample
