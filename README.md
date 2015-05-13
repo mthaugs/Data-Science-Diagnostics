@@ -5,7 +5,7 @@ This repo is designed to compile a short list of typical diagnostics used when b
 Each diagnostic file is a short synopsis of each type of diagnostic to include:  
 1. A brief definition  
 2. The relevant equations that lead to the diagnostic  
-3. A plot (if applicable) of a diagnostic sample
+3. A plot (if applicable) of a diagnostic sample  
 4. Interpretation and/or use of the diagnostic when appropriate  
 5. Further avenues after using each diagnostic  
 6. Some example R code for using the diagnostic  
