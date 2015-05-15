@@ -1,5 +1,53 @@
 ---
 title: "PRESS Statistic"
 output: pdf_document
+fontsize: 12pt
+geometry: margin=1in
 ---
+```{r echo=FALSE}
+library(MASS)
+```
+
+## Definition
+The **PRESS statistic** is the predicted sum of squares. This statistic provides an idea of the model's predictive ability. It is the sum of squares of the *prediction* error. For each $y_i$, the fitted value $\hat{y_i}$ is obtained from the remaining n-1 observations. Think of the n-1 observations as the training data for a single test data point for prediction. The sum of these squared errors, $y_i - \hat{y_i}$ is the PRESS statistic.  
+
+**Equations**
+      $$PRESS = \sum_{i=1}^{n}(y_i - \hat{y}_{i,-i})^2$$
+
+## Example PRESS Stats
+```{r echo=TRUE, message=FALSE}
+library(MPV)
+data(mtcars)
+model <- lm(mpg ~ ., data=mtcars)
+model2 <- update(model, mpg ~ hp + wt)
+model3 <- update(model, mpg ~ hp + wt + qsec)
+PRESSstat <- PRESS(model)
+PRESSstat2 <- PRESS(model2)
+PRESSstat3 <- PRESS(model3)
+```
+
+Model  | PRESS Statistic
+:-------------:     | :-------------:|
+Full Model        | 389.8
+Nested Model 1    | 246.5  
+Nested Model 2    | 245.5
+
+## Interpretation and Use
+The PRESS statistic is useful, especially in conjunction with the studentized residuals (since they are based on the PRESS statistic instead of the sum of squares). Among similar or nested models, the PRESS statistic is useful in evaluating the predictive abilities of the models. A lower PRESS is better. Compared to standarized residuals, the PRESS statistic can help identify an overfitted model since the PRESS statistic will be larger since it evaluates the jackknifed residuals ("leave one [observation] out"). In the above example, the full model may be overfitted since the PRESS statistic is significantly greater than the two nested models. 
+      
+**Further Avenues**  
+*AIC/BIC* - The PRESS statistic works well in conjunction with the Akaike and Bayesian Information Criteria statistics (AIC/BIC). They measure the relative loss of information between nested models and are useful in determining if simpler models outperform more complex models. 
+
+## R Code
+```{r}
+# alternative method to manually calculate the PRESS statistic 
+# without the MPV library
+pr <- residuals(model)/(1 - lm.influence(model)$hat)
+PRESS <- sum(pr^2)
+# identical result as the PRESS call to the full model above 
+PRESS
+```
+
+
+
 
