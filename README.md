@@ -26,12 +26,14 @@ Mallow's Cp
 DFBETA  
 DFFITS  
 Cook's Distance  
+VIF  
 
 ### When should each statistic be used?
 **Assessing the model choices BEFORE regression**  
 DFBETA  
 DFFITS  
-Cook's Distance 
+Cook's Distance  
+VIF  
 
 **Post-Regression Diagnostics**  
 Standardized Residuals  
