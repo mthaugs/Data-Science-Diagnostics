@@ -17,10 +17,11 @@ The **PRESS statistic** is the predicted sum of squares. This statistic provides
 ## Example PRESS Stats
 ```{r echo=TRUE, message=FALSE}
 library(MPV)
-data(mtcars)
-model <- lm(mpg ~ ., data=mtcars)
-model2 <- update(model, mpg ~ hp + wt)
-model3 <- update(model, mpg ~ hp + wt + qsec)
+# use swiss dataset
+data(swiss)
+model <- lm(Fertility ~ ., data=swiss)
+model2 <- update(model, Fertility ~ Agriculture + Education)
+model3 <- update(model, Fertility ~ Agriculture + Education + Examination)
 PRESSstat <- PRESS(model)
 PRESSstat2 <- PRESS(model2)
 PRESSstat3 <- PRESS(model3)
@@ -28,12 +29,13 @@ PRESSstat3 <- PRESS(model3)
 
 Model  | PRESS Statistic
 :-------------:     | :-------------:|
-Full Model        | 389.8
-Nested Model 1    | 246.5  
-Nested Model 2    | 245.5
+Full Model        | 2815
+Nested Model 1    | 4412  
+Nested Model 2    | 3757
 
 ## Interpretation and Use
-The PRESS statistic is useful, especially in conjunction with the studentized residuals (since they are based on the PRESS statistic instead of the sum of squares). Among similar or nested models, the PRESS statistic is useful in evaluating the predictive abilities of the models. A lower PRESS is better. Compared to standarized residuals, the PRESS statistic can help identify an overfitted model since the PRESS statistic will be larger since it evaluates the jackknifed residuals ("leave one [observation] out"). In the above example, the full model may be overfitted since the PRESS statistic is significantly greater than the two nested models. 
+The PRESS statistic is useful, especially in conjunction with the studentized residuals (since they are based on the PRESS statistic instead of the sum of squares). Among similar or nested models, the PRESS statistic helps in evaluating the predictive abilities of the models. A lower PRESS is better among comparable models. Compared to standarized residuals, the PRESS statistic can help identify an overfitted model since the PRESS statistic will be larger since it evaluates the jackknifed residuals ("leave one [observation] out").   
+      
       
 **Further Avenues**  
 *AIC/BIC* - The PRESS statistic works well in conjunction with the Akaike and Bayesian Information Criteria statistics (AIC/BIC). They measure the relative loss of information between nested models and are useful in determining if simpler models outperform more complex models. 

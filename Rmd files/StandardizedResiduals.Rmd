@@ -13,10 +13,10 @@ $$MSE = \frac{\sum(Y_i-\hat{Y_i})^2}{n-p}$$
 
 ## Example Plot
 ```{r echo=FALSE, fig.height=3.5, fig.width=6.5}
-data(mtcars)
-model <- lm(mpg ~ ., data=mtcars)
+data(swiss)
+model <- lm(Fertility ~ ., data=swiss)
 stdResiduals <- rstandard(model)
-plot(stdResiduals, ylab="Standardized Residuals", main="Standardized Residuals for mtcars Model\n mpg ~ .")
+plot(stdResiduals, ylab="Standardized Residuals", main="Standardized Residuals for swiss Model\n Fertility ~ .")
 abline(0,0)
 abline(h=2, lty = 3)
 abline(h=-2, lty = 3)
@@ -33,11 +33,11 @@ Since standardized residuals derive from $e_i = y_i -\hat{y}_i$, a $y_i$ with hi
 
 ## R Code
 ```{r}
-data(mtcars)
-model <- lm(mpg ~ ., data=mtcars)
+data(swiss)
+model <- lm(Fertility ~ ., data=swiss)
 stdResiduals <- rstandard(model)
 #plot(stdResiduals, ylab="Standardized Residuals", 
-#        main="Standardized Residuals for mtcars Model\n mpg ~ .")
+#        main="Standardized Residuals for swiss Model\n Fertility ~ .")
 #abline(0,0)
 #abline(h=2, lty = 3)
 #abline(h=-2, lty = 3)

@@ -19,15 +19,15 @@ library(car)
       
 ## Example Plots
 ```{r echo=FALSE, fig.height=3.5, fig.width=7}
-data(mtcars)
-model <- lm(mpg ~ ., data=mtcars)
+data(swiss)
+model <- lm(Fertility ~ ., data=swiss)
 studentResids <- studres(model)
 par(mfrow=c(1,2))
-plot(studentResids, ylab="Studentized Residuals", main="Studentized Residuals for\n mtcars Model mpg ~ .")
+plot(studentResids, ylab="Studentized Residuals", main="Studentized Residuals for\n swiss Model Fertility ~ .")
 abline(0,0)
 abline(h=2, lty = 3)
 abline(h=-2, lty = 3)
-hist(studentResids, freq=FALSE, main="Distribution of\nStudentized Residuals", xlab="Residuals", ylim=c(0,0.4))
+hist(studentResids, freq=FALSE, main="Distribution of\nStudentized Residuals", xlab="Residuals", ylim=c(0,0.5))
 xfit<-seq(min(studentResids),max(studentResids),length=40) 
 yfit<-dnorm(xfit) 
 lines(xfit, yfit)
@@ -43,17 +43,17 @@ Studentized residuals allow for evaluating how much of an outlier or leverage po
 ```{r}
 library(MASS)
 library(car)
-data(mtcars)
-model <- lm(mpg ~ ., data=mtcars)
+data(swiss)
+model <- lm(Fertility ~ ., data=swiss)
 studentResids <- studres(model)
 #plot(studentResids, ylab="Studentized Residuals", 
-#        main="Studentized Residuals for\n mtcars Model mpg ~ .")
+#        main="Studentized Residuals for\n swiss Model Fertility ~ .")
 #abline(0,0)
 #abline(h=2, lty = 3)
 #abline(h=-2, lty = 3)
 #hist(studentResids, freq=FALSE, 
 #        main="Distribution of\nStudentized Residuals", 
-#        xlab="Residuals", ylim=c(0,0.4))
+#        xlab="Residuals", ylim=c(0,0.5))
 #xfit<-seq(min(studentResids),max(studentResids),length=40) 
 #yfit<-dnorm(xfit) 
 #lines(xfit, yfit)
