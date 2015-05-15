@@ -14,10 +14,10 @@ If you find these useful, feel free to use them. If you discover any errors or h
 
 Thank you!
 
-### Current List
-Standardized Residuals
-Studentized Residuals
-PRESS Statistic
+### Current List  
+Standardized Residuals  
+Studentized Residuals  
+PRESS Statistic  
 
 ### Upcoming List
 AIC  
