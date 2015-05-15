@@ -1,5 +1,0 @@
----
-title: "PRESS Statistic"
-output: pdf_document
----
-
