@@ -13,3 +13,30 @@ Each diagnostic file is a short synopsis of each type of diagnostic to include:
 If you find these useful, feel free to use them. If you discover any errors or have suggestions to improve these file, please share so I can make them better!
 
 Thank you!
+
+### Current List
+Standardized Residuals
+Studentized Residuals
+PRESS Statistic
+
+### Upcoming List
+AIC  
+BIC  
+Mallow's Cp 
+DFBETA  
+DFFITS  
+Cook's Distance  
+
+### When should each statistic be used?
+**Assessing the model choices BEFORE regression**  
+DFBETA  
+DFFITS  
+Cook's Distance 
+
+**Post-Regression Diagnostics**  
+Standardized Residuals  
+Studentized Residuals  
+PRESS Statistic  
+AIC  
+BIC  
+Mallow's Cp
