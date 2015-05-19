@@ -18,6 +18,7 @@ Thank you!
 Standardized Residuals  
 Studentized Residuals  
 PRESS Statistic  
+Cook's Distance  
 
 ### Upcoming List
 AIC  
@@ -25,7 +26,6 @@ BIC
 Mallow's Cp 
 DFBETA  
 DFFITS  
-Cook's Distance  
 VIF  
 
 ### When should each statistic be used?
