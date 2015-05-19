@@ -19,6 +19,7 @@ Standardized Residuals
 Studentized Residuals  
 PRESS Statistic  
 Cook's Distance  
+VIF  
 
 ### Upcoming List
 AIC  
@@ -26,7 +27,7 @@ BIC
 Mallow's Cp 
 DFBETA  
 DFFITS  
-VIF  
+ 
 
 ### When should each statistic be used?
 **Assessing the model choices BEFORE regression**  
