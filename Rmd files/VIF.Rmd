@@ -34,5 +34,8 @@ VIF  | Indication
 $1 < VIF < 5$           | moderate correlation   
 $VIF > 5$               | strong correlation  
 
+**Problems**  
+In some cases of high collinearity resulting in large VIFs, pruning the model may not be appropriate depending on the specifics of the data set and population of interest. VIF should not be used to blindly remove variables unless it makes sense to remove them. 
+
 **Further Avenues**  
 When **VIF** is high in a model for regression coefficients, it may be necessarily to remove or otherwise limit some model parameters. VIF can help identify if nested models may be a better choice for finding relationships. Other statistics that evaluate the value of nested models like AIC, BIC, and PRESS may help to find a better model.  
