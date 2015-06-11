@@ -39,6 +39,6 @@ Studentized Residuals
 PRESS Statistic  
 AIC  
 BIC  
-Mallow's Cp
+Mallow's Cp  
 DFBETA  
 DFFITS
