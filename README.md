@@ -20,19 +20,16 @@ Studentized Residuals
 PRESS Statistic  
 Cook's Distance  
 VIF  
+DFBETA  
+DFFITS  
 
 ### Upcoming List
 AIC  
 BIC  
 Mallow's Cp  
-DFBETA  
-DFFITS  
- 
 
 ### When should each statistic be used?
 **Assessing the model choices BEFORE regression**  
-DFBETA  
-DFFITS  
 Cook's Distance  
 VIF  
 
@@ -43,3 +40,5 @@ PRESS Statistic
 AIC  
 BIC  
 Mallow's Cp
+DFBETA  
+DFFITS
